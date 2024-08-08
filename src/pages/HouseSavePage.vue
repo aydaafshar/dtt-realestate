@@ -1,7 +1,5 @@
 <template>
-    <div> House List</div>
+    <div>House List</div>
 </template>
 
-<script setup lang="js">
-
-</script>
+<script setup lang="js"></script>

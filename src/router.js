@@ -11,7 +11,6 @@ const routes = [
     { path: '/house/new', component: HouseSavePage },
     { path: '/house/:id/edit', component: HouseSavePage },
     { path: '/about', component: AboutPage },
-
 ]
 
 export const router = createRouter({

@@ -1,25 +1,27 @@
 {
-  "name": "dtt-realstate",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/vue-fontawesome": "^3.0.8",
-    "pinia": "^2.2.1",
-    "vue": "^3.4.31",
-    "vue-router": "^4.4.3"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.5",
-    "vite": "^5.3.4"
-  }
+    "name": "dtt-realstate",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier src --write"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.6.0",
+        "@fortawesome/free-brands-svg-icons": "^6.6.0",
+        "@fortawesome/free-regular-svg-icons": "^6.6.0",
+        "@fortawesome/free-solid-svg-icons": "^6.6.0",
+        "@fortawesome/vue-fontawesome": "^3.0.8",
+        "pinia": "^2.2.1",
+        "vue": "^3.4.31",
+        "vue-router": "^4.4.3"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.5",
+        "prettier": "^3.3.3",
+        "vite": "^5.3.4"
+    }
 }
