@@ -17,6 +17,39 @@ export const getHouse = async (id) => {
     return await result.json()
 }
 
-export const createHouse = () => {}
 
-export const editHouse = () => {}
+export const upload = async (id, image) => {
+    const formData = new FormData()
+    formData.append('image', image, image.name)
+
+    await fetch(`https://api.intern.d-tt.nl/api/houses/${id}/upload`, {
+        method: 'POST',
+        headers,
+        body: formData
+    })
+
+}
+
+export const createHouse = async (data, image) => {
+
+    const res = await fetch('https://api.intern.d-tt.nl/api/houses', { headers, method: 'POST', body: data })
+    const house = await res.json()
+
+
+    if (image && image instanceof File) {
+        await upload(house.id, image)
+    }
+
+    return house.id
+}
+
+export const editHouse = async (id, data, image) => {
+
+    await fetch(`https://api.intern.d-tt.nl/api/houses/${id}`, { headers, method: 'POST', body: data })
+
+    if (image && image instanceof File) {
+        await upload(id, image)
+    }
+
+    return id
+}

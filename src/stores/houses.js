@@ -36,18 +36,20 @@ export const useHouses = defineStore('houses', () => {
         try {
             errorMessage.value = ''
             const data = await getHouse(id)
-            house.value = data
+            house.value = data[0]
+            // in-case user navigates to detail page directly we need to fetch the houses
+            // to make the recommendation list
+            if (baseHouses.value.length === 0) {
+                await loadMany()
+            }
         } catch (e) {
             errorMessage.value = `Could not load the house with id:${id}`
         }
     }
-    const create = () => {}
 
-    const edit = () => {}
+    const remove = (id) => {
 
-    const upload = () => {}
-
-    const remove = () => {}
+    }
 
     const houses = computed(() => {
         const result = baseHouses.value.filter(
@@ -65,18 +67,39 @@ export const useHouses = defineStore('houses', () => {
         return result
     })
 
+    const recommendedHouses = computed(() => {
+
+        if (!house.value || !baseHouses.value) {
+            return []
+        }
+
+        const result = baseHouses.value.filter((h) => h.location.zip === house.value.location.zip && h.id !== house.value.id).slice(0, 5)
+        if (result.length === 0) {
+            return baseHouses.value.slice(0, 5)
+        }
+        return result
+    })
+
+
+    const searchCount = computed(() => {
+        if (searchText.value === "") {
+            return 0
+        }
+
+        return houses.value.length
+    })
+
     return {
         houses,
+        recommendedHouses,
         house,
         sortType,
         errorMessage,
+        searchCount,
         loadMany,
         loadOne,
         sort,
         search,
-        create,
-        edit,
         remove,
-        upload,
     }
 })
