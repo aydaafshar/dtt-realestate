@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import { getHouse, getHouses } from './api'
+import { getHouse, getHouses, removeHouse } from './api'
 
 export const useHouses = defineStore('houses', () => {
     const baseHouses = ref([])
@@ -33,6 +33,7 @@ export const useHouses = defineStore('houses', () => {
     }
 
     const loadOne = async (id) => {
+        house.value = undefined
         try {
             errorMessage.value = ''
             const data = await getHouse(id)
@@ -47,8 +48,10 @@ export const useHouses = defineStore('houses', () => {
         }
     }
 
-    const remove = (id) => {
-
+    const remove = async (id) => {
+        await removeHouse(id)
+        baseHouses.value = baseHouses.value.filter(x => x.id !== id)
+        return Promise.resolve()
     }
 
     const houses = computed(() => {

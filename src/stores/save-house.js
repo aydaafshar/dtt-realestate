@@ -106,6 +106,7 @@ export const useSaveHouse = defineStore('save-house', () => {
         }
     }
 
+
     const save = () => {
         Object.keys(data).forEach((key) => {
             validate(key)

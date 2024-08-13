@@ -1,10 +1,22 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import BaseIconButton from './BaseIconButton.vue'
+import { useHouses, useModal } from '../stores';
 
 const router = useRouter()
+const modal = useModal()
+const houses = useHouses()
 const props = defineProps({ id: Number })
-const openRemoveConfirmationModal = () => { }
+const openRemoveConfirmationModal = () => {
+    const handleResult = (confirmed) => {
+        if (confirmed) {
+            houses.remove(props.id).then(() => {
+                router.push('/')
+            })
+        }
+    }
+    modal.open("Delete listing", ["Are you sure you want to delete this listing?", "This action cannot be undone."], handleResult)
+}
 
 </script>
 

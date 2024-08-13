@@ -13,8 +13,8 @@ onMounted(() => {
     store.loadOne(route.params.id)
 })
 
-onBeforeRouteUpdate(() => {
-    store.loadOne(route.params.id)
+onBeforeRouteUpdate((to) => {
+    store.loadOne(to.params.id)
 })
 
 </script>

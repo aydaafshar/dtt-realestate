@@ -17,6 +17,13 @@ export const getHouse = async (id) => {
     return await result.json()
 }
 
+export const removeHouse = (id) => {
+    return fetch(`https://api.intern.d-tt.nl/api/houses/${id}`, {
+        headers,
+        method: "DELETE"
+    })
+}
+
 
 export const upload = async (id, image) => {
     const formData = new FormData()
@@ -42,6 +49,8 @@ export const createHouse = async (data, image) => {
 
     return house.id
 }
+
+
 
 export const editHouse = async (id, data, image) => {
 
