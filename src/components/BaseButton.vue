@@ -2,7 +2,7 @@
 const props = defineProps({
     icon: String,
     variant: String,
-    disabled:Boolean,
+    disabled: Boolean,
     type: String
 })
 const emit = defineEmits(['click'])
@@ -23,11 +23,15 @@ const emit = defineEmits(['click'])
     justify-content: center;
     align-items: center;
     padding: 10px 15px;
-    gap: 5px;
+    gap: 8px;
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-button:disabled.button{
-   background-color: gray;
+button:disabled.button {
+    background-color: gray;
 }
 
 .button .text {
@@ -37,10 +41,10 @@ button:disabled.button{
 }
 
 .button.primary {
-    background-color: red;
+    background-color: var(--color-primary);
 }
 
 .button.secondary {
-    background-color: gray;
+    background-color: var(--color-secondary);
 }
 </style>

@@ -23,8 +23,8 @@ const openRemoveConfirmationModal = () => {
 
 <template>
     <div class="house-actions">
-        <BaseIconButton icon="pen" variant="primary" @click="router.push(`/house/${props.id}/edit`)" />
-        <BaseIconButton icon="trash" variant="secondary" @click="openRemoveConfirmationModal()" />
+        <BaseIconButton icon="pen" size="lg" variant="primary" @click="router.push(`/house/${props.id}/edit`)" />
+        <BaseIconButton icon="trash" size="lg" variant="secondary" @click="openRemoveConfirmationModal()" />
     </div>
 </template>
 
@@ -32,6 +32,7 @@ const openRemoveConfirmationModal = () => {
 .house-actions {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
+    /* box-sizing: border-box; */
 }
 </style>

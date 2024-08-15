@@ -18,6 +18,11 @@ const props = defineProps({
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    gap: 5px
+    gap: 5px;
+    color: var(--color-quaternary)
+}
+
+.badge p {
+    color: var(--text-secondary);
 }
 </style>

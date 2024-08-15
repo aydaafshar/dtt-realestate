@@ -9,9 +9,9 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import {
     faTrash, faCircleXmark, faMagnifyingGlass,
     faBath, faBed, faSquare, faPen, faPlus,
-    faArrowLeft
+    faArrowLeft, faHome, faInfoCircle
 } from "@fortawesome/free-solid-svg-icons"
-library.add(faArrowLeft, faTrash, faCircleXmark, faMagnifyingGlass, faBath, faBed, faSquare, faPen, faPlus)
+library.add(faHome, faInfoCircle, faArrowLeft, faTrash, faCircleXmark, faMagnifyingGlass, faBath, faBed, faSquare, faPen, faPlus)
 
 const app = createApp(App)
 app.use(createPinia())

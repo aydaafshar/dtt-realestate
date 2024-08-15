@@ -21,7 +21,7 @@ const goBack = () => {
 </script>
 <template>
     <div class="back-button">
-        <BaseIconButton icon="arrow-left" @click="goBack()" />
+        <BaseIconButton size="lg" icon="arrow-left" @click="goBack()" />
         <h3>
             <slot></slot>
         </h3>
@@ -34,5 +34,7 @@ const goBack = () => {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0;
 }
 </style>

@@ -39,10 +39,11 @@ const store = useModal()
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 
     border-radius: 10px;
     background-color: #fff;
-    padding: 10px 20px
+    padding: 20px 30px
 }
 
 .modal .modal-body p {

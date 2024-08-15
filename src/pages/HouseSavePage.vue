@@ -128,6 +128,9 @@ const submit = () => {
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 

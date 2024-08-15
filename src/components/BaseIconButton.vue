@@ -1,6 +1,7 @@
 <script setup lang="js">
 const props = defineProps({
     icon: String,
+    size: String,
     variant: String
 })
 
@@ -10,7 +11,7 @@ const emit = defineEmits(['click'])
 
 <template>
     <button class="icon-button" :class="props.variant" @click="emit('click')">
-        <font-awesome-icon :icon="props.icon" />
+        <font-awesome-icon :icon="props.icon" :size="props.size" />
     </button>
 
 </template>
@@ -22,13 +23,15 @@ const emit = defineEmits(['click'])
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    background-color: transparent;
 }
 
 .icon-button.primary {
-    background-color: red;
+    color: var(--color-primary)
 }
 
 .icon-button.secondary {
-    background-color: gray;
+    color: var(--color-seconadry)
 }
 </style>

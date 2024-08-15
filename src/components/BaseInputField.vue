@@ -23,21 +23,23 @@ const props = defineProps({
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 8px;
 }
 
 .input-field-container .input {
     border: none;
     border-radius: 5px;
-    background-color: lightgray;
-    border: 1px solid lightgray;
-    padding: 5px 10px;
+    background-color: var(--color-background-2);
+    border: 1px solid transparent;
+    padding: 15px 10px;
     box-sizing: border-box;
     width: 100%;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.01);
 
 }
 
 .input-field-container .input.invalid {
-    border: 1px solid red;
+    border: 1px solid var(--color-primary);
 }
 
 .input-field-container .input input,
