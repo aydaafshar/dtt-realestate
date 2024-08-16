@@ -1,14 +1,20 @@
 <script setup lang="js">
-const props = defineProps({
-    icon: String,
-    variant: String,
-    disabled: Boolean,
-    type: String
-})
-const emit = defineEmits(['click'])
+    const props = defineProps({
+        icon: String,
+        variant: String,
+        disabled: Boolean,
+        type: String,
+    })
+    const emit = defineEmits(['click'])
 </script>
 <template>
-    <button :disabled="props.disabled" :type="props.type" class="button" :class="props.variant" @click="emit('click')">
+    <button
+        :disabled="props.disabled"
+        :type="props.type"
+        class="button"
+        :class="props.variant"
+        @click="emit('click')"
+    >
         <font-awesome-icon v-if="props.icon" :icon="props.icon" />
         <span class="text">
             <slot></slot>
@@ -17,34 +23,38 @@ const emit = defineEmits(['click'])
 </template>
 
 <style lang="css">
-.button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 15px;
-    gap: 8px;
-    color: var(--color-tertiary);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 25px;
+        gap: 8px;
+        color: var(--color-tertiary);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
 
-button:disabled.button {
-    background-color: gray;
-}
+        font-family: var(--font-2);
+        font-weight: bold;
+        font-size: 18px;
+    }
 
-.button .text {
-    flex: 1;
-    text-transform: uppercase;
-    text-align: center;
-}
+    button:disabled.button {
+        background-color: gray;
+    }
 
-.button.primary {
-    background-color: var(--color-primary);
-}
+    .button .text {
+        flex: 1;
+        text-transform: uppercase;
+        text-align: center;
+    }
 
-.button.secondary {
-    background-color: var(--color-secondary);
-}
+    .button.primary {
+        background-color: var(--color-primary);
+    }
+
+    .button.secondary {
+        background-color: var(--color-secondary);
+    }
 </style>

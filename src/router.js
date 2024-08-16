@@ -6,7 +6,7 @@ import HouseListPage from './pages/HouseListPage.vue'
 import HouseSavePage from './pages/HouseSavePage.vue'
 
 const routes = [
-    { path: '/', component: HouseListPage },
+    { path: '/', redirect: '/house' }, // redirects to the house list 
     { path: '/house', component: HouseListPage },
     { path: '/house/:id', component: HouseDetailPage },
     { path: '/house/new', component: HouseSavePage },
